@@ -37,13 +37,13 @@ const PersonalMovieDB = () => ({
   detectPersonalLevel() {
     const count = this.personalMovieDB.count;
     if (count < 10) {
-      document.write('min');
-    } else if (10 <= count <= 30) {
-      document.write('middle');
+      document.write('Вы посмотрели мало фильмов');
+    } else if (count >= 10 && count <= 30) {
+      document.write('Вы посмотрели много фильмов');
     } else if (count > 30) {
-      document.write('max');
+      document.write('Вы киноман');
     } else {
-      document.write('no');
+      document.write('что-то пошло не так');
     }
   },
   toggleVisibleMyBD() {
@@ -55,7 +55,7 @@ const PersonalMovieDB = () => ({
     }
   },
   writeYourGenres() {
-    let yourGenres = null;
+    let yourGenres = '';
     let i = 0;
     while (i < 2) {
       yourGenres = prompt(`Ваш любимый жанр №${i + 1}?`, '');
